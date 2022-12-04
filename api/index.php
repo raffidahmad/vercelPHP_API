@@ -11,7 +11,7 @@ $api = new Careerjet_API('en_GB') ;
 $page = 1 ; # Or from parameters.
 
 $result = $api->search(array(
-  'keywords' => 'php developer',
+  'keywords' => 'medical',
   'location' => 'London',
   'page' => $page ,
   'affid' => '92a60b31bf3e3bee48fb790bc9568437',
