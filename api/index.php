@@ -20,12 +20,22 @@ if ( $result->type == 'JOBS' ){
   //echo "Found ".$result->hits." jobs" ;
   //echo " on ".$result->pages." pages\n" ;
   $jobs = $result->jobs ;
-  
-  //make api for frontend to get jobs
-  //send json data to frontend
-  //make object
-  $json = json_encode($jobs);
-  echo $json;
+  $object = new stdClass();
+  $jobsArray = array();
+
+  foreach( $jobs as $job ){
+    $object->url = $job->url;
+    $object->title = $job->title;
+    $object->locations = $job->locations;
+    $object->company = $job->company;
+    $object->salary = $job->salary;
+    $object->date = $job->date;
+    $object->description = $job->description;
+    
+    array_push($jobsArray, $object);
+  }
+  echo json_encode($jobsArray);
+
   // foreach( $jobs as $job ){
   //   echo " URL:     ".$job->url."\n" ;
   //   echo " TITLE:   ".$job->title."\n" ;
