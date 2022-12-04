@@ -38,13 +38,13 @@ if ( $result->type == 'JOBS' ){
   // }
 
   # Basic paging code
-  if( $page > 1 ){
-    //echo "Use \$page - 1 to link to previous page\n";
-  }
- // echo "You are on page $page\n" ;
-  if ( $page < $result->pages ){
-   // echo "Use \$page + 1 to link to next page\n" ;
-  }
+//   if( $page > 1 ){
+//     //echo "Use \$page - 1 to link to previous page\n";
+//   }
+//  // echo "You are on page $page\n" ;
+//   if ( $page < $result->pages ){
+//    // echo "Use \$page + 1 to link to next page\n" ;
+//   }
 }
 
 # When location is ambiguous
