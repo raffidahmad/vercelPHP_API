@@ -11,7 +11,7 @@ $api = new Careerjet_API('en_GB') ;
 $page = 1 ; # Or from parameters.
 
 $result = $api->search(array(
-  'keywords' => 'biotechnology,medicine,medical,human resources',
+  'keywords' => 'medical,biotechnology',
   'location' => 'United Kingdom',
   'page' => $page ,
   'affid' => '92a60b31bf3e3bee48fb790bc9568437',
@@ -21,10 +21,11 @@ if ( $result->type == 'JOBS' ){
   //echo "Found ".$result->hits." jobs" ;
   //echo " on ".$result->pages." pages\n" ;
   $jobs = $result->jobs ;
-  $object = new stdClass();
+  
   $jobsArray = array();
 
   foreach( $jobs as $job ){
+    $object = new stdClass();
     $object->url = $job->url;
     $object->title = $job->title;
     $object->locations = $job->locations;
@@ -34,6 +35,7 @@ if ( $result->type == 'JOBS' ){
     $object->description = $job->description;
     
     array_push($jobsArray, $object);
+
   }
   echo json_encode($jobsArray);
 
