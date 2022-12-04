@@ -12,7 +12,7 @@ $page = 1 ; # Or from parameters.
 
 $result = $api->search(array(
   'keywords' => 'biotechnology',
-  'location' => 'London',
+  'location' => 'United Kingdom',
   'page' => $page ,
   'affid' => '92a60b31bf3e3bee48fb790bc9568437',
 ));
